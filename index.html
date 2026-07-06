@@ -103,7 +103,7 @@
   .footnote{font-size:13.5px;color:var(--muted);margin-top:18px}
   .footnote b{color:var(--soft)}
 
-  .media{display:grid;gap:14px}
+  .media{width:80%;display:block;aspect-ratio:16/9;object-fit:cover}
   .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#000}
   .frame iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
   .vid-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -269,7 +269,7 @@
           </div>
           <div class="media">
             <div class="frame">
-              <iframe loading="lazy" src="images/nl.JPG" title="Flavors Without Borders episode" object-fit: cover></iframe>
+              <iframe loading="lazy" src="images/nl.JPG" title="Flavors Without Borders episode" >
             </div>
             <div class="vid-grid">
               <a class="vid" href="https://youtu.be/HN1OvPBa724" target="_blank" rel="noopener">
@@ -545,12 +545,12 @@
         <div class="photo">
           <div class="ph-inner">
             <span class="big-zh">劉采寧</span>
-            <span class="lang-en">Add your photo here</span><span class="lang-zh">在這裡放上你的照片</span>
+            <span class="lang-en">Add your photo here</span><span class="lang-zh"> <img src="images/selfie.JPG"></span>
           </div>
            </div>
           <!-- TODO: replace this block with <img src="your-photo.jpg" alt="Natalie Liu" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"> -->
-           <img src="images/selfie.JPG" alt="Natalie Liu" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-        </div>
+           <!--img src="images/selfie.JPG" alt="Natalie Liu" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"-->
+        <!--/div-->
         <div class="body">
           <p>
             <span class="serif" style="font-size:22px">Hi！你好！Hej！</span>
