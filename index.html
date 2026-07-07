@@ -626,13 +626,13 @@
             <!-- TODO: optional — add event photos (with any confidential details cropped out) -->
             <figure class="snap">
               <!-- Put your event photo in the images/ folder and match the filename EXACTLY (case-sensitive!), e.g.:-->
-                   <img src="images/yearend.jpg" alt="ASML year-end event"> 
+                   <img src="images/yearend.jpg" alt="ASML year-end event" onerror="this.closest('figure').querySelector('.snap-ph').style.display='flex';this.remove()"> 
               <!--img src="images/yearend.jpg" alt="ASML year-end event" onerror="this.closest('figure').querySelector('.snap-ph').style.display='flex';this.remove()"-->
               <figcaption><span class="lang-en">ASML year-end event · Taiwan</span><span class="lang-zh">ASML 年終活動 · 台灣</span></figcaption>
             </figure>
             <figure class="snap" style="transform:rotate(.5deg)">
               <!-- Second photo: images/asml-event-2.jpg (filename must match EXACTLY, case-sensitive) -->
-              <img src="images/team.jpg" alt="ASML event — apparel design or team building" onerror="this.closest('figure').querySelector('.snap-ph').style.display='flex';this.remove()">
+              <img src="images/team.jpg" alt="ASML event — apparel design or team building" onerror="this.closest('figure').querySelector('.snap-ph').style.display:width:90%;height:auto;this.remove()">
               <div class="snap-ph" style="display:none"><span class="lang-en">Image not found — check the filename<br>matches exactly (including .jpg vs .JPG)</span><span class="lang-zh">找不到圖片 — 請確認檔名完全一致<br>（包含大小寫 .jpg / .JPG）</span></div>
               <figcaption><span class="lang-en">Team apparel </span><span class="lang-zh">團隊服飾設計</span></figcaption>
             </figure>
