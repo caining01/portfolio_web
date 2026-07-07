@@ -116,6 +116,34 @@
   .also{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;margin-top:56px}
   .also h4{font-size:17px;font-weight:700;margin-bottom:8px}
   .also p{font-size:15px;color:var(--soft)}
+  .also.also-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;background:none;border:none;padding:0}
+  .also-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px}
+
+  /* embassy visit photo frame */
+  .snap{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 12px 10px;box-shadow:0 10px 24px -18px rgba(40,41,31,.45);transform:rotate(-.6deg)}
+  .snap img{width:100%;display:block;border-radius:6px;aspect-ratio:4/3;object-fit:cover}
+  .snap-ph{border:1.5px dashed #C5BFA6;border-radius:6px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);font-size:13.5px;background:var(--bg2)}
+  .snap figcaption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:9px 4px 2px;text-align:center}
+
+  /* passport */
+  .passport{margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 28px -22px rgba(40,41,31,.4)}
+  .pp-head{background:var(--accent);color:#fff;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .pp-head .t{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+  .pp-head .r{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;background:rgba(255,255,255,.18);border-radius:999px;padding:3px 12px}
+  .pp-body{display:grid;grid-template-columns:132px 1fr;gap:20px;padding:20px 22px;position:relative}
+  .pp-photo{width:132px;height:168px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-align:center}
+  .pp-photo img{width:100%;height:100%;object-fit:cover}
+  .pp-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;align-content:start}
+  .pp-f .mono{display:block;font-size:10.5px;margin-bottom:1px;color:var(--muted)}
+  .pp-f .v{font-weight:700;font-size:14.5px;color:var(--ink)}
+  .pp-f.wide{grid-column:1 / -1}
+  .pp-stamp{position:absolute;right:18px;bottom:12px;border:2.5px solid var(--accent);color:var(--accent);border-radius:10px;padding:5px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;transform:rotate(-9deg);opacity:.85;background:rgba(255,255,255,.6)}
+  .mrz{border-top:2px dashed var(--line);padding:12px 22px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;color:var(--soft);white-space:nowrap;overflow:hidden}
+  @media (max-width:560px){
+    .pp-body{grid-template-columns:1fr}
+    .pp-photo{margin:0 auto}
+    .pp-fields{grid-template-columns:1fr}
+  }
 
   .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
   .note-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:12px;padding:26px}
@@ -123,7 +151,7 @@
   .note-card h3{font-size:23px;margin-bottom:12px}
   .note-card p{font-size:15.5px;color:var(--soft)}
 
-  .about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.35fr);gap:56px;align-items:start}
+  .about{display:block;max-width:760px}
   .photo{background:var(--bg2);border:1px solid var(--line);border-radius:14px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
   .photo .ph-inner{text-align:center;color:var(--muted);font-size:13px;padding:20px}
   .photo .big-zh{font-family:'Instrument Serif','PingFang TC',serif;font-size:52px;color:var(--ink);display:block;margin-bottom:8px}
@@ -254,8 +282,8 @@
               <div class="label-row"><span class="mono"><span class="lang-en">What I did</span><span class="lang-zh">我做了什麼</span></span></div>
               <ol class="steps">
                 <li><span class="s">1</span><div><b><span class="lang-en">Wrote the format</span><span class="lang-zh">設計節目形式</span></b><p><span class="lang-en">A host and embassy representatives taste-test the country's foods <br> — stories, games, Q&A. 30–45 min shoots cut to ~7 min episodes.</span><span class="lang-zh">主持人與大使館代表一起試吃該國美食，穿插故事、遊戲與問答。30–45 分鐘的拍攝剪成約 7 分鐘一集。</span></p></div></li>
-                <li><span class="s">2</span><div><b><span class="lang-en">Pitched 10+ embassies — 6 committed</span><span class="lang-zh">提案 10+ 間大使館 — 6 間承諾參與</span></b><p><span class="lang-en">Cold outreach to diplomatic missions in Taipei.</span><span class="lang-zh">陌生開發台北的各國駐台機構，包含親自前往荷蘭在台辦事處提案。</span></p></div></li>
-                <li><span class="s">3</span><div><b><span class="lang-en">Secured host & production partner</span><span class="lang-zh">確定主持人與製作團隊</span></b><p><span class="lang-en">Locked the on-camera host and video production company; defined the filming-day workflow.</span><span class="lang-zh">敲定鏡頭前主持人與影像製作公司，並規劃拍攝日的完整流程。</span></p></div></li>
+                <li><span class="s">2</span><div><b><span class="lang-en">Pitched 10+ embassies — 6 committed</span><span class="lang-zh">提案 10+ 間大使館 — 6 間承諾參與</span></b><p><span class="lang-en">Direct outreach to trade offices and missions in Taipei — from AIT and the Canadian Trade Office to the Netherlands, Argentina, and Indonesia — including an in-person pitch at the Netherlands Office Taipei.</span><span class="lang-zh">直接洽談台北的各國駐台機構 — 從美國在台協會、加拿大駐台北貿易辦事處，到荷蘭、阿根廷與印尼辦事處 — 並親自前往荷蘭在台辦事處提案。</span></p></div></li>
+                <li><span class="s">3</span><div><b><span class="lang-en">Cast a KOC host — on purpose</span><span class="lang-zh">刻意選擇 KOC 主持人</span></b><p><span class="lang-en">Past embassy collabs lived on KOL channels, so the audience never belonged to the brand. I hired a KOC host and a production partner instead — so every episode lives on the official channel and the audience compounds to the brand, not to a creator.</span><span class="lang-zh">過往的大使館合作影片都放在 KOL 的頻道上，觀眾從來不屬於品牌。我改聘 KOC 擔任主持人並敲定製作團隊 — 讓每一集都放在官方頻道，觀眾累積給品牌，而不是網紅。</span></p></div></li>
                 <li><span class="s">4</span><div><b><span class="lang-en">Planned the rollout</span><span class="lang-zh">規劃上線節奏</span></b><p><span class="lang-en">One episode every 1–2 weeks on YouTube, with teasers and behind-the-scenes on IG/FB via collab posts.</span><span class="lang-zh">每 1–2 週在 YouTube 上線一集，並以 IG/FB 合作貼文釋出前導與幕後花絮。</span></p></div></li>
               </ol>
             </div>
@@ -263,13 +291,19 @@
               <div class="label-row"><span class="mono"><span class="lang-en">The outcome</span><span class="lang-zh">成果</span></span></div>
               <div class="outcomes">
                 <div class="stat"><b><span class="lang-en">4 episodes</span><span class="lang-zh">4 支影片</span></b><span><span class="lang-en">published on the official channel</span><span class="lang-zh">於官方頻道上線</span></span></div>
-                <div class="stat"><b>~60%</b><span><span class="lang-en">pitch-to-commitment rate on cold embassy outreach</span><span class="lang-zh">大使館陌生開發的提案成功率</span></span></div>
+                <div class="stat"><b>~60%</b><span><span class="lang-en">pitch-to-commitment rate across the missions I approached</span><span class="lang-zh">大使館提案的承諾參與率</span></span></div>
+                <div class="stat"><b>NT$815K</b><span><span class="lang-en">production budget scoped in my proposal (both series)</span><span class="lang-zh">企劃書中規劃的製作預算（兩系列合計）</span></span></div>
               </div>
             </div>
             <p class="footnote"><b><span class="lang-en">Honest footnote:</span><span class="lang-zh">誠實註記：</span></b><span class="lang-en"> I left TAITRA before filming began — the team produced and published the series on the blueprint I wrote.</span><span class="lang-zh">我在開拍前離開 TAITRA — 團隊依照我撰寫的企劃藍圖完成拍攝與上線。</span></p>
           </div>
           <div class="media">
-            
+            <figure class="snap">
+              <!-- Replace the placeholder below with your embassy visit photo, e.g.:
+                   <img src="images/nl-embassy.jpg" alt="Pitching at the Netherlands Office Taipei"> -->
+              <div class="snap-ph"><span class="lang-en">Add your photo from the<br>Netherlands Office visit here</span><span class="lang-zh">在這裡放上你拜訪<br>荷蘭在台辦事處的照片</span></div>
+              <figcaption><span class="lang-en">Pitching in person at the Netherlands Office Taipei</span><span class="lang-zh">親自前往荷蘭在台辦事處提案</span></figcaption>
+            </figure>
             <div class="vid-grid">
               <a class="vid" href="https://youtu.be/HN1OvPBa724" target="_blank" rel="noopener">
                 <img src="https://img.youtube.com/vi/HN1OvPBa724/hqdefault.jpg" alt="Flavors Without Borders episode thumbnail">
@@ -284,8 +318,8 @@
                 <span class="cap"><span class="lang-en">Episode</span><span class="lang-zh">影片</span> <span>▶</span></span>
               </a>
               <!-- TODO: optional — add a photo from your embassy visit or the project brief cover here -->
-               <a class="vid" href="https://youtu.be/gzfbGZyimPo?si=Jqgfpc_DYz-YRCTC" target="_blank" rel="noopener">
-                <img src="https://img.youtube.com/vi/gzfbGZyimPo?si=Jqgfpc_DYz-YRCTC" alt="Flavors Without Borders episode thumbnail">
+               <a class="vid" href="https://youtu.be/gzfbGZyimPo" target="_blank" rel="noopener">
+                <img src="https://img.youtube.com/vi/gzfbGZyimPo/hqdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/gzfbGZyimPo/mqdefault.jpg'" alt="Flavors Without Borders episode thumbnail">
                 <span class="cap"><span class="lang-en">Episode</span><span class="lang-zh">影片</span> <span>▶</span></span>
               </a>
               <!-- div class="placeholder"><span class="lang-en">Optional: a photo from the embassy visit,<br>or a page of your original proposal</span><span class="lang-zh">選填：大使館拜訪照片，<br>或原始企劃書的其中一頁</span></div-->
@@ -305,7 +339,7 @@
 
       <!-- CASE 02 -->
       <article class="case">
-        <div class="case-top"><span class="num">CASE 02</span><h3 class="serif"><span class="lang-en">Smart Manufacturing, Tasty Futures<span class="zh2">智造味來</span></span><span class="lang-zh">智慧製造，美味未來</span></h3></div>
+        <div class="case-top"><span class="num">CASE 02</span><h3 class="serif"><span class="lang-en">Smart Manufacturing, Tasty Futures<span class="zh2">智造味來</span></span><span class="lang-zh">智造味來<span class="zh2">Smart Manufacturing, Tasty Futures</span></span></h3></div>
         <p class="client"><span class="lang-en">Factory-tour video series for international buyers · TAITRA, Food Taipei Mega Shows 2025 <br>
           · Role: concept, proposal, format design</span><span class="lang-zh">拍給國際買主的工廠參訪影片系列 · TAITRA 台北國際食品系列展 2025 <br>· 負責：企劃發想、提案、形式設計</span></p>
         <div class="cols">
@@ -415,7 +449,7 @@
               <ol class="steps">
                 <li><span class="s">1</span><div><b><span class="lang-en">Published on a fixed rhythm</span><span class="lang-zh">固定節奏發布</span></b><p><span class="lang-en">Two Stories weekly — daily-life content plus weekly themes designed around interaction, not broadcast.</span><span class="lang-zh">每週兩則限時動態 — 日常分享加上每週主題，重點是互動，不是單向廣播。</span></p></div></li>
                 <li><span class="s">2</span><div><b><span class="lang-en">Collaborated with creators</span><span class="lang-zh">與創作者合作</span></b><p><span class="lang-en">Co-produced Reels to reach far beyond my own follower base.</span><span class="lang-zh">共同製作 Reels，觸及遠超出自己粉絲圈的觀眾。</span></p></div></li>
-                <li><span class="s">3</span><div><b><span class="lang-en">Tested a giveaway — and audited it</span><span class="lang-zh">測試抽獎活動 — 並檢討它</span></b><p><span class="lang-en">Designed and ran the campaign, then analyzed the funnel when follower conversion underperformed.</span><span class="lang-zh">設計並執行抽獎活動，在粉絲轉換不如預期時，回頭分析整個漏斗找原因。</span></p></div></li>
+                <li><span class="s">3</span><div><b><span class="lang-en">Tested a giveaway — and audited it</span><span class="lang-zh">測試抽獎活動 — 並檢討它</span></b><p><span class="lang-en">The giveaway post hit 18.97% engagement — but only 1.28% follower growth and a 0.87% conversion rate. I analyzed the funnel to understand why attention didn't become loyalty.</span><span class="lang-zh">抽獎貼文互動率高達 18.97% — 但粉絲成長率僅 1.28%、轉換率 0.87%。我回頭分析整個漏斗，找出注意力沒有變成忠誠度的原因。</span></p></div></li>
               </ol>
             </div>
             <div class="block">
@@ -437,10 +471,10 @@
           <span class="mark">“</span>
           <div>
             <h4><span class="lang-en">What the failure taught me</span><span class="lang-zh">失敗教會我的事</span></h4>
-            <p><span class="lang-en">The giveaway drew high engagement but converted followers
-            poorly — attention and loyalty are different metrics. I'd rather
+            <p><span class="lang-en">The giveaway hit 18.97% engagement but converted at 0.87% —
+            attention and loyalty are different metrics. I'd rather
             show you the campaign that underperformed and what I learned than
-            pretend everything worked.</span><span class="lang-zh">抽獎帶來很高的互動，但粉絲轉換卻不理想 — 注意力和忠誠度是兩個不同的指標。我寧願讓你看到那個成效不佳的活動和我學到的事，也不想假裝一切都很完美。</span></p>
+            pretend everything worked.</span><span class="lang-zh">抽獎的互動率有 18.97%，轉換率卻只有 0.87% — 注意力和忠誠度是兩個不同的指標。我寧願讓你看到那個成效不佳的活動和我學到的事，也不想假裝一切都很完美。</span></p>
           </div>
         </div>
       </article>
@@ -492,11 +526,15 @@
       </article>
 
       <!-- ALSO -->
-      <div class="also">
-        <h4><span class="lang-en">Also: ShiGuang Hotel — graduation exhibition</span><span class="lang-zh">還有：拾光旅店 — 畢業成果展</span></h4>
-        <p><span class="lang-en">Marketing team lead. A four-day campus booth converted 450 participants
-        into visitors; the week-long exhibition reached 1,000 attendees, with
-        ~600 more at an off-campus run driven by social promotion.</span><span class="lang-zh">行銷組組長。四天的校內擺攤吸引 800 名參與者並成功轉化為觀展人潮；為期一週的展覽達成 2,000 名觀展者。</span></p>
+      <div class="also also-grid">
+        <div class="also-item">
+          <h4><span class="lang-en">Also: ShiGuang Hotel — graduation exhibition</span><span class="lang-zh">還有：拾光旅店 — 畢業成果展</span></h4>
+          <p><span class="lang-en">Marketing team lead. Grew exhibition IG followers +32.4% and profile views +412.6% in three months; a four-day campus booth engaged 450 participants (80 giveaways/day), the week-long exhibition reached 1,000 attendees, with ~600 more at an off-campus run.</span><span class="lang-zh">行銷組組長。三個月內展覽 IG 粉絲成長 32.4%、瀏覽次數成長 412.6%；四天校內擺攤吸引 450 名參與者（每日發放 80 份贈品），一週展期達成 1,000 名觀展者，校外場再帶來約 600 人次。</span></p>
+        </div>
+        <div class="also-item">
+          <h4><span class="lang-en">Also: International marketing plan — Food Taipei</span><span class="lang-zh">還有：台北國際食品展 國際行銷企劃書</span></h4>
+          <p><span class="lang-en">Authored a full international marketing plan for the exhibition: target markets across NA, Europe, and Asia; benchmarking against SIAL Paris and Gulfood Dubai; a channel budget allocation model (physical 40% / ads 30% / content 20% / email 10%); and a KPI framework covering exhibitor growth, social reach, and media coverage.</span><span class="lang-zh">為展覽撰寫完整的國際行銷企劃書：鎖定北美、歐洲與亞洲目標市場，對標 SIAL 巴黎與 Gulfood 杜拜等國際食品展，規劃通路預算配置模型（實體 40% / 廣告 30% / 內容 20% / 電子報 10%），並建立涵蓋參展商成長、社群觸及與媒體曝光的 KPI 架構。</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -545,10 +583,6 @@
         <span class="mono"><span class="lang-en">關於我</span><span class="lang-zh">About</span></span>
       </div>
       <div class="about">
-        <div class="photo">
-          <!-- TODO: replace this block with <img src="your-photo.jpg" alt="Natalie Liu" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"> -->
-           <img src="images/selfie.JPG" alt="Natalie Liu" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-        </div>
         <div class="body">
           <p>
             <span class="serif" style="font-size:22px">Hi！你好！Hej！</span>
@@ -567,48 +601,45 @@
             <span class="lang-zh">現在的我在國泰航空飛行 — 這是一段刻意選擇的篇章：面對面觀察一個精品品牌如何向 50+ 個國籍的乘客兌現承諾。而我正準備把這門課帶回行銷。</span>
           </p>
 
-          <!-- BOARDING PASS -->
-          <div class="pass" role="group" aria-label="Personal information">
-            <div class="pass-head">
-              <span class="brand">✈ NATALIE  · <span class="lang-en">Boarding Pass</span><span class="lang-zh">登機證</span></span>
-              <span class="cls">MKTG CLASS</span>
+          <!-- PASSPORT -->
+          <div class="passport" role="group" aria-label="Personal information">
+            <div class="pp-head">
+              <span class="t"><span class="lang-en">Passport · Marketing Edition</span><span class="lang-zh">護照 · 行銷人版</span></span>
+              <span class="r">TWN · TPE</span>
             </div>
-            <div class="pass-main">
-              <div class="route">
-                <div><span class="code">TPE</span><br><span class="sub"><span class="lang-en">Taipei</span><span class="lang-zh">台北</span></span></div>
-                <div class="path">✈</div>
-                <div style="text-align:right"><span class="code">YOU</span><br><span class="sub"><span class="lang-en">Your marketing team</span><span class="lang-zh">你的行銷團隊</span></span></div>
+            <div class="pp-body">
+              <div class="pp-photo">
+                <img src="images/selfie.JPG" alt="Natalie Liu">
               </div>
-              <div class="pf">
-                <span class="mono"><span class="lang-en">Passenger</span><span class="lang-zh">旅客</span></span>
-                <span class="v big">LIU, TSAI NING (NATALIE)</span>
+              <div class="pp-fields">
+                <div class="pp-f wide">
+                  <span class="mono"><span class="lang-en">Surname / Given names</span><span class="lang-zh">姓 / 名</span></span>
+                  <span class="v">LIU, TSAI NING (NATALIE) 劉采寧</span>
+                </div>
+                <div class="pp-f">
+                  <span class="mono"><span class="lang-en">Profession</span><span class="lang-zh">職業</span></span>
+                  <span class="v"><span class="lang-en">Marketing & Communications</span><span class="lang-zh">行銷與傳播</span></span>
+                </div>
+                <div class="pp-f">
+                  <span class="mono"><span class="lang-en">Languages</span><span class="lang-zh">語言</span></span>
+                  <span class="v">中文 · EN · SV</span>
+                </div>
+                <div class="pp-f">
+                  <span class="mono"><span class="lang-en">Certification</span><span class="lang-zh">證照</span></span>
+                  <span class="v">Google Analytics</span>
+                </div>
+                <div class="pp-f">
+                  <span class="mono"><span class="lang-en">Education</span><span class="lang-zh">學歷</span></span>
+                  <span class="v">NYCU · UC3M · NTHU</span>
+                </div>
+                <div class="pp-f wide">
+                  <span class="mono"><span class="lang-en">Visa status</span><span class="lang-zh">簽證狀態</span></span>
+                  <span class="v"><span class="lang-en">Open to relocate — Asia & Europe</span><span class="lang-zh">可外派 — 亞洲與歐洲</span></span>
+                </div>
               </div>
-              <div class="pf">
-                <span class="mono"><span class="lang-en">Languages</span><span class="lang-zh">語言</span></span>
-                <span class="v">中文 · EN · SV</span>
-              </div>
-              <div class="pf">
-                <span class="mono"><span class="lang-en">Certification</span><span class="lang-zh">證照</span></span>
-                <span class="v">Google Analytics</span>
-              </div>
-              <div class="pf">
-                <span class="mono"><span class="lang-en">Education</span><span class="lang-zh">學歷</span></span>
-                <span class="v">NYCU · UC3M · NTHU</span>
-              </div>
-              <div class="pf">
-                <span class="mono"><span class="lang-en">Status</span><span class="lang-zh">狀態</span></span>
-                <span class="v"><span class="lang-en">Open to relocate — <br> Asia & Europe</span><span class="lang-zh">可外派 — 亞洲與歐洲</span></span>
-              </div>
-              <div class="pf">
-                <span class="mono"><span class="lang-en">Gate opens</span><span class="lang-zh">登機門開放</span></span>
-                <span class="v"><span class="lang-en">Now boarding</span><span class="lang-zh">開放登機中</span></span>
-              </div>
+              <span class="pp-stamp"><span class="lang-en">Open to work</span><span class="lang-zh">開放職缺機會</span></span>
             </div>
-            <div class="pass-tear"></div>
-            <div class="pass-foot">
-              <span class="mono">caining01@gmail.com</span>
-              <div class="barcode" aria-hidden="true"></div>
-            </div>
+            <div class="mrz">P&lt;TWNLIU&lt;&lt;TSAI&lt;NING&lt;NATALIE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>CAINING01&lt;GMAIL&lt;COM&lt;&lt;MKTG&lt;COMMS&lt;ZH&lt;EN&lt;SV&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
           </div>
 
           <div class="now">
