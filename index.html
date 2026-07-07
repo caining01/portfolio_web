@@ -78,7 +78,9 @@
   .case h3 .zh2{color:var(--muted);font-size:.62em;margin-left:10px}
   .case .client{color:var(--muted);font-size:15px;margin:10px 0 34px}
 
-  .cols{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:52px;align-items:start}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+  .cols .media{position:sticky;top:84px}
+  @media (max-width:860px){ .cols .media{position:static} }
   .label-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
   .label-row .mono{color:var(--accent)}
   .label-row::after{content:"";flex:1;height:1px;background:var(--line)}
@@ -126,16 +128,17 @@
   .snap figcaption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:9px 4px 2px;text-align:center}
 
   /* passport */
-  .passport{margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 28px -22px rgba(40,41,31,.4)}
+  .passport{margin-top:30px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 28px -22px rgba(40,41,31,.4)}
   .pp-head{background:var(--accent);color:#fff;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
   .pp-head .t{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
   .pp-head .r{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;background:rgba(255,255,255,.18);border-radius:999px;padding:3px 12px}
-  .pp-body{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:0;position:relative}
-  .pp-photo{width:100%;min-height:380px;border-right:1.5px dashed var(--line);overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-align:center;position:relative}
-  .pp-photo::after{content:"";position:absolute;inset:10px;border:1px solid rgba(78,122,70,.35);border-radius:8px;pointer-events:none}
-  .pp-fields{padding:24px 26px}
+  .pp-body{display:grid;grid-template-columns:minmax(240px,300px) 1fr;gap:22px;padding:20px;position:relative}
+  .pp-photo{width:100%;height:100%;min-height:330px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-align:center;position:relative}
+  .pp-photo img{object-position:center 25%}
+  .pp-photo::after{content:"";position:absolute;inset:6px;border:1px solid rgba(78,122,70,.35);border-radius:5px;pointer-events:none}
+  .pp-fields{padding:0}
   .pp-photo img{width:100%;height:100%;object-fit:cover}
-  .pp-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;align-content:start}
+  .pp-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;align-content:center}
   .pp-f .mono{display:block;font-size:10.5px;margin-bottom:1px;color:var(--muted)}
   .pp-f .v{font-weight:700;font-size:14.5px;color:var(--ink)}
   .pp-f.wide{grid-column:1 / -1}
@@ -143,8 +146,10 @@
   .mrz{border-top:2px dashed var(--line);padding:12px 22px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;color:var(--soft);white-space:nowrap;overflow:hidden}
   @media (max-width:560px){
     .pp-body{grid-template-columns:1fr}
-    .pp-photo{min-height:340px;border-right:0;border-bottom:1.5px dashed var(--line)}
-    .pp-photo{margin:0 auto}
+    .pp-photo{min-height:260px;height:260px}
+    .pp-fields{grid-template-columns:1fr}
+    .pp-photo{min-height:260px;height:260px}
+    .pp-fields{grid-template-columns:1fr}
     .pp-fields{grid-template-columns:1fr}
   }
 
@@ -154,7 +159,7 @@
   .note-card h3{font-size:23px;margin-bottom:12px}
   .note-card p{font-size:15.5px;color:var(--soft)}
 
-  .about{display:block}
+  .about{display:block;max-width:860px}
   .photo{background:var(--bg2);border:1px solid var(--line);border-radius:14px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
   .photo .ph-inner{text-align:center;color:var(--muted);font-size:13px;padding:20px}
   .photo .big-zh{font-family:'Instrument Serif','PingFang TC',serif;font-size:52px;color:var(--ink);display:block;margin-bottom:8px}
@@ -287,10 +292,24 @@
       </p>
       <div class="cta">
         <a class="btn" href="#work"><span class="lang-en">Read the case studies</span><span class="lang-zh">閱讀作品案例</span></a>
-        <!--a class="textlink" href="mailto:caining01@gmail.com">caining01@gmail.com</a-->
+        <a class="textlink" href="mailto:caining01@gmail.com">caining01@gmail.com</a>
       </div>
     </div>
   </div>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights" style="padding:44px 0;border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="label-row" style="margin-bottom:18px"><span class="mono"><span class="lang-en">Career highlights</span><span class="lang-zh">職涯亮點</span></span></div>
+      <div class="outcomes">
+        <div class="stat"><b>13.9%</b><span><span class="lang-en">avg IG engagement on a brand I built from zero</span><span class="lang-zh">從零打造的 IG 品牌平均互動率</span></span></div>
+        <div class="stat"><b>6 / 10+</b><span><span class="lang-en">embassies committed to my video series pitch</span><span class="lang-zh">大使館提案承諾參與比例</span></span></div>
+        <div class="stat"><b>NT$815K</b><span><span class="lang-en">production budget scoped &amp; approved via my proposals</span><span class="lang-zh">企劃書規劃並獲核准的製作預算</span></span></div>
+        <div class="stat"><b>30+</b><span><span class="lang-en">bilingual EN/中文 EDM campaigns executed</span><span class="lang-zh">執行的雙語 EDM 檔次</span></span></div>
+        <div class="stat"><b>2</b><span><span class="lang-en">video series greenlit &amp; published on the official channel</span><span class="lang-zh">獲採納並上線官方頻道的影片系列</span></span></div>
+      </div>
+    </div>
+  </section>
 
   <!-- WORK -->
   <section id="work">
@@ -304,7 +323,7 @@
       <article class="case">
         <div class="case-top"><span class="num">CASE 01</span><h3 class="serif"><span class="lang-en">Flavors Without Borders<span class="zh2">環遊食界</span></span><span class="lang-zh">環遊食界<span class="zh2">Flavors Without Borders</span></span></h3></div>
         <p class="client"><span class="lang-en">Embassy food-tasting YouTube series · TAITRA, Food Taipei Mega Shows 2025 <br>
-          · Role: concept, proposal, embassy outreach, pre-production</span><span class="lang-zh">大使館美食試吃 YouTube 系列 · TAITRA 台北國際食品系列展 2025 <br>· 負責：企劃發想、提案、大使館洽談、前期製作</span></p>
+          · Role: end-to-end ownership — concept, proposal, approved budget, embassy outreach, pre-production</span><span class="lang-zh">大使館美食試吃 YouTube 系列 · TAITRA 台北國際食品系列展 2025 <br>· 負責：從企劃到預算的完整主導 — 發想、提案、預算核准、大使館洽談、前期製作</span></p>
         <div class="cols">
           <div>
             <div class="block">
@@ -334,9 +353,9 @@
           </div>
           <div class="media">
             <figure class="snap">
-              <!-- Replace the placeholder below with your embassy visit photo, e.g.:> -->
-                   <img src="images/nl.JPG" alt="Pitching at the Netherlands Office Taipei">
-              <!--div class="snap-ph"><span class="lang-en">Add your photo from the<br>Netherlands Office visit here</span><span class="lang-zh">在這裡放上你拜訪<br>荷蘭在台辦事處的照片</span></div-->
+              <!-- Replace the placeholder below with your embassy visit photo, e.g.:
+                   <img src="images/nl-embassy.jpg" alt="Pitching at the Netherlands Office Taipei"> -->
+              <div class="snap-ph"><span class="lang-en">Add your photo from the<br>Netherlands Office visit here</span><span class="lang-zh">在這裡放上你拜訪<br>荷蘭在台辦事處的照片</span></div>
               <figcaption><span class="lang-en">Pitching in person at the Netherlands Office Taipei</span><span class="lang-zh">親自前往荷蘭在台辦事處提案</span></figcaption>
             </figure>
             <div class="vid-grid">
@@ -390,7 +409,7 @@
               <ol class="steps">
                 <li><span class="s">1</span><div><b><span class="lang-en">Proposed the series</span><span class="lang-zh">提出系列企劃</span></b><p><span class="lang-en">Take buyers inside food, machinery, and packaging plants — tours, tastings, and production walk-throughs.</span><span class="lang-zh">帶買主走進食品、機械與包裝工廠 — 參訪、試吃、完整走一遍生產流程。</span></p></div></li>
                 <li><span class="s">2</span><div><b><span class="lang-en">Designed the format</span><span class="lang-zh">設計影片形式</span></b><p><span class="lang-en">15–20 minute episodes, English-led with Chinese support, released ahead of the exhibition.</span><span class="lang-zh">每集 15–20 分鐘，英文為主、中文輔助，在展前陸續上線。</span></p></div></li>
-                <li><span class="s">3</span><div><b><span class="lang-en">Built in ESG & IoT storytelling</span><span class="lang-zh">融入 ESG 與 IoT 敘事</span></b><p><span class="lang-en">Sustainability and smart production as the differentiator — matching the show's "Green Intelligence" theme.</span><span class="lang-zh">以永續與智慧製造作為差異化亮點，呼應展覽「綠色智慧」的年度主題。</span></p></div></li>
+                <li><span class="s">3</span><div><b><span class="lang-en">Built in ESG & IoT storytelling</span><span class="lang-zh">融入 ESG 與 IoT 敘事</span></b><p><span class="lang-en">Sustainability and smart production as the differentiator — matching the show's official "Smart Eating, Green Living" theme.</span><span class="lang-zh">以永續與智慧製造作為差異化亮點，呼應展覽「精準食代・綠色智慧」的年度主題。</span></p></div></li>
               </ol>
             </div>
             <div class="block">
@@ -447,7 +466,7 @@
               <ol class="steps">
                 <li><span class="s">1</span><div><b><span class="lang-en">Designed a color-coded system</span><span class="lang-zh">設計顏色分類系統</span></b><p><span class="lang-en">One category color per post with bold, recognizable typography — a snack post and a packaging post are distinguishable at a glance.</span><span class="lang-zh">每個類別一個代表色，搭配辨識度高的粗體字，不同主題一眼就能分辨。</span></p></div></li>
                 <li><span class="s">2</span><div><b><span class="lang-en">Wrote everything twice</span><span class="lang-zh">每篇文案寫兩次</span></b><p><span class="lang-en">English copy for international buyers, 中文 for local visitors — different hooks for each audience, not direct translation.</span><span class="lang-zh">英文寫給國際買主、中文寫給本地觀眾 — 針對不同受眾用不同切角，而不是直接翻譯。</span></p></div></li>
-                <li><span class="s">3</span><div><b><span class="lang-en">Ran the campaigns around it</span><span class="lang-zh">同步操作行銷活動</span></b><p><span class="lang-en">30+ bilingual EDM campaigns driving visitor pre-registration; audience analysis with an external agency to map the B2B vs. B2C visitor mix.</span><span class="lang-zh">執行 30+ 檔雙語 EDM 推動觀眾預先登記，並與外部行銷公司合作受眾分析，釐清 B2B 與 B2C 的觀眾組成。</span></p></div></li>
+                <li><span class="s">3</span><div><b><span class="lang-en">Ran the campaigns around it</span><span class="lang-zh">同步操作行銷活動</span></b><p><span class="lang-en">Designed EDM journeys for two distinct audiences — exhibitor recruitment and visitor pre-registration — 30+ bilingual sends in total, with audience analysis alongside an external agency to map the B2B vs. B2C visitor mix and set channel priorities.</span><span class="lang-zh">為兩種受眾設計 EDM 旅程 — 參展商招募與觀眾預先登記 — 共執行 30+ 檔雙語發送，並與外部行銷公司合作受眾分析，釐清 B2B 與 B2C 的觀眾組成、據此排定渠道優先順序。</span></p></div></li>
               </ol>
             </div>
           </div>
@@ -467,23 +486,23 @@
                        videos/reel-2.mp4  →  https://www.instagram.com/reel/DHFaP3poPSD/
                      They autoplay muted in a loop — real motion, no clicking needed. -->
                 <a class="slide card-slide" href="https://www.instagram.com/p/DIfWrIrNSWI/" target="_blank" rel="noopener">
-                  <img src="images/images:feed-post-1.jpg" alt="Food Taipei Instagram post 1" loading="lazy">
+                  <img src="images/feed-post-1.png" alt="Food Taipei Instagram post 1" loading="lazy">
                   <span class="slide-cap"><span class="lang-en">Feed post</span><span class="lang-zh">貼文</span> ↗</span>
                 </a>
                 <a class="slide card-slide" href="https://www.instagram.com/p/DINVHGWB4po/" target="_blank" rel="noopener">
-                  <img src="images/images:feed-post-2_n.jpg" alt="Food Taipei Instagram post 2" loading="lazy">
+                  <img src="images/feed-post-2.png" alt="Food Taipei Instagram post 2" loading="lazy">
                   <span class="slide-cap"><span class="lang-en">Feed post</span><span class="lang-zh">貼文</span> ↗</span>
                 </a>
                 <a class="slide card-slide" href="https://www.instagram.com/p/DHcTISKsJCh/" target="_blank" rel="noopener">
-                  <img src="images/images:feed-post-3.jpg" alt="Food Taipei Instagram post 3" loading="lazy">
+                  <img src="images/feed-post-3.png" alt="Food Taipei Instagram post 3" loading="lazy">
                   <span class="slide-cap"><span class="lang-en">Feed post</span><span class="lang-zh">貼文</span> ↗</span>
                 </a>
                 <a class="slide card-slide" href="https://www.instagram.com/reel/DIILnorpdMQ/" target="_blank" rel="noopener">
-                  <video src="videos/reels-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                  <video src="videos/reel-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
                   <span class="slide-cap"><span class="lang-en">Animated reel</span><span class="lang-zh">動態 Reel</span> ↗</span>
                 </a>
                 <a class="slide card-slide" href="https://www.instagram.com/reel/DHFaP3poPSD/" target="_blank" rel="noopener">
-                  <video src="videos/reels-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                  <video src="videos/reel-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
                   <span class="slide-cap"><span class="lang-en">Animated reel</span><span class="lang-zh">動態 Reel</span> ↗</span>
                 </a>
               </div>
@@ -504,7 +523,7 @@
       <!-- CASE 04 -->
       <article class="case">
         <div class="case-top"><span class="num">CASE 04</span><h3 class="serif"><span class="lang-en">COCO ROOM: 0 → 13.9%</span><span class="lang-zh">COCO ROOM 口口室集：從 0 到 13.9%</span></h3></div>
-        <p class="client"><span class="lang-en">Instagram content brand · University graduation project, 2023 <br>
+        <p class="client"><span class="lang-en">Instagram content brand (<a href="https://www.instagram.com/co_2_room/" target="_blank" rel="noopener" style="font-weight:600">@co_2_room ↗</a>) · University graduation project, 2023 <br>
           · Role: everything — strategy, content, analytics</span><span class="lang-zh">Instagram 內容品牌 · 大學畢業製作，2023 <br>· 負責：策略、內容創作、數據分析</span></p>
         <div class="cols">
           <div>
@@ -554,12 +573,7 @@
               <div class="snap-ph"><span class="lang-en">Engagement-over-time chart<br>(the 13.9% slide from your old portfolio)</span><span class="lang-zh">互動率趨勢圖<br>（舊作品集裡 13.9% 那一頁）</span></div>
               <figcaption><span class="lang-en">Avg engagement 13.9% · Jun–Dec 2023</span><span class="lang-zh">平均互動率 13.9% · 2023/06–12</span></figcaption>
             </figure>
-            <!--figure class="snap">
-              <!-- Optional: <img src="images/coco-best-post.png" alt="COCO ROOM character post"> -->
-              <!--div class="snap-ph"><span class="lang-en">Optional: your favorite COCO ROOM<br>character post or Reel screenshot</span><span class="lang-zh">選填：你最喜歡的 COCO ROOM<br>角色貼文或 Reel 截圖</span></div>
-              <figcaption><span class="lang-en">Content sample</span><span class="lang-zh">內容範例</span></figcaption>
-          </figure-->
-            </div>
+          </div>
         </div>
         <div class="lesson-band">
           <span class="mark">“</span>
@@ -579,20 +593,22 @@
       <!-- CASE 05: ASML -->
       <article class="case">
         <div class="case-top"><span class="num">CASE 05</span><h3 class="serif"><span class="lang-en">Events for 100 people — and for 1,000</span><span class="lang-zh">從 100 人到 1,000 人的活動</span></h3></div>
-        <p class="client"><span class="lang-en">Corporate events & team operations · ASML Taiwan · Part-time internship, Jun 2022 – Sep 2023</span><span class="lang-zh">企業活動與團隊營運 · ASML 台灣 · 兼職實習，2022/06 – 2023/09</span></p>
+        <p class="client"><span class="lang-en">Corporate events & employee experience · ASML Taiwan · Part-time internship, Jun 2022 – Sep 2023</span><span class="lang-zh">企業活動與員工體驗 · ASML 台灣 · 兼職實習，2022/06 – 2023/09</span></p>
         <div class="cols">
           <div>
             <div class="block">
               <div class="label-row"><span class="mono"><span class="lang-en">The context</span><span class="lang-zh">背景</span></span></div>
               <p><span class="lang-en">Sixteen months inside one of the world's most important
-              semiconductor companies, supporting the team that keeps thousands
-              of employees connected — while finishing my degree.</span><span class="lang-zh">在全球最重要的半導體設備公司之一待了十六個月，一邊完成學位，一邊支援讓數千名員工保持連結的團隊。</span></p>
+              semiconductor companies, running internal events that are really
+              employer branding delivered live — while finishing my degree. Sixteen months
+              is long enough to stop being "the intern": by the end I was
+              handling vendor relationships and event budgets myself.</span><span class="lang-zh">在全球最重要的半導體設備公司之一待了十六個月，一邊完成學位，一邊執行企業內部活動 — 那其實就是「現場交付的雇主品牌」。十六個月，久到足以不再只是「實習生」：到後期，廠商關係和活動預算都已經由我親自處理。</span></p>
             </div>
             <div class="block">
               <div class="label-row"><span class="mono"><span class="lang-en">What I did</span><span class="lang-zh">我做了什麼</span></span></div>
               <ol class="steps">
                 <li><span class="s">1</span><div><b><span class="lang-en">Supported ~8 corporate events end to end</span><span class="lang-zh">從頭到尾支援約 8 場企業活動</span></b><p><span class="lang-en">From Father's Day celebrations to two year-end banquets — one department banquet (~100 people) and a Taiwan-wide celebration for ~1,000 employees across all sites.</span><span class="lang-zh">從父親節活動到兩場年終尾牙，一場約 100 人的部門尾牙，以及一場全台各據點、約 1,000 名員工參加的年度盛會。</span></p></div></li>
-                <li><span class="s">2</span><div><b><span class="lang-en">Coordinated 20+ vendors</span><span class="lang-zh">協調 20+ 家廠商</span></b><p><span class="lang-en">Caterers, transport companies, venues, apparel makers, and award manufacturers — booking, scheduling, and keeping every moving piece on time.</span><span class="lang-zh">餐飲、交通、場地、服飾與獎座製作 — 預訂、排程，讓每個環節準時到位。</span></p></div></li>
+                <li><span class="s">2</span><div><b><span class="lang-en">Coordinated 20+ vendors</span><span class="lang-zh">協調 20+ 家廠商</span></b><p><span class="lang-en">Caterers, transport companies, venues, apparel makers, and award manufacturers — booking, scheduling, and keeping every moving piece on time, while liaising with HR and department stakeholders so events stayed aligned with internal-comms goals.</span><span class="lang-zh">餐飲、交通、場地、服飾與獎座製作 — 預訂、排程，讓每個環節準時到位，並與 HR 及部門窗口協調，確保活動與內部溝通目標一致。</span></p></div></li>
                 <li><span class="s">3</span><div><b><span class="lang-en">Tracked event budgets</span><span class="lang-zh">控管活動預算</span></b><p><span class="lang-en">Managed transport and catering budgets for a cross-site team-building day (an escape-room event gathering the department from multiple Taiwan sites), keeping spend within plan in Excel.</span><span class="lang-zh">為跨據點的部門團建日，控管交通與餐飲預算，用 Excel 確保支出不超標。</span></p></div></li>
                 <li><span class="s">4</span><div><b><span class="lang-en">Produced the creative pieces</span><span class="lang-zh">親手做出創意產出</span></b><p><span class="lang-en">Designed team apparel in Illustrator and Canva, commissioned custom trophies for the employee recognition awards, and filmed & edited two videos for the year-end event.</span><span class="lang-zh">用 Illustrator設計團隊服飾、設計團建日活動，並為年終活動拍攝、剪輯兩支影片。</span></p></div></li>
               </ol>
@@ -608,9 +624,19 @@
           </div>
           <div class="media">
             <!-- TODO: optional — add event photos (with any confidential details cropped out) -->
-            <div class="placeholder"><span class="lang-en"                  
- —<br>the banquet stage, your apparel design, or a trophy close-up.<br><em>Check ASML's photo policy before posting internal images.</em></span><span class="lang-zh"><img src="images/yearend.jpg" alt="yearend">
-              <img src="images/team.jpg" alt="yearend"> —<br>尾牙舞台、你的服飾設計、或獎座特寫。<br></em></span></div>
+            <figure class="snap">
+              <!-- Put your event photo in the images/ folder and match the filename EXACTLY (case-sensitive!), e.g.:
+                   <img src="images/asml-event.jpg" alt="ASML year-end event"> -->
+              <img src="images/asml-event.jpg" alt="ASML year-end event" onerror="this.closest('figure').querySelector('.snap-ph').style.display='flex';this.remove()">
+              <div class="snap-ph" style="display:none"><span class="lang-en">Image not found — check the filename<br>matches exactly (including .jpg vs .JPG)</span><span class="lang-zh">找不到圖片 — 請確認檔名完全一致<br>（包含大小寫 .jpg / .JPG）</span></div>
+              <figcaption><span class="lang-en">ASML year-end event · Taiwan</span><span class="lang-zh">ASML 年終活動 · 台灣</span></figcaption>
+            </figure>
+            <figure class="snap" style="transform:rotate(.5deg)">
+              <!-- Second photo: images/asml-event-2.jpg (filename must match EXACTLY, case-sensitive) -->
+              <img src="images/asml-event-2.jpg" alt="ASML event — apparel design or team building" onerror="this.closest('figure').querySelector('.snap-ph').style.display='flex';this.remove()">
+              <div class="snap-ph" style="display:none"><span class="lang-en">Image not found — check the filename<br>matches exactly (including .jpg vs .JPG)</span><span class="lang-zh">找不到圖片 — 請確認檔名完全一致<br>（包含大小寫 .jpg / .JPG）</span></div>
+              <figcaption><span class="lang-en">Team apparel / team-building day</span><span class="lang-zh">團隊服飾設計 / 團建日</span></figcaption>
+            </figure>
           </div>
         </div>
         <div class="lesson-band">
@@ -700,6 +726,14 @@
             <span class="lang-zh">現在的我在國泰航空飛行 — 這是一段刻意選擇的篇章：面對面觀察一個精品品牌如何向 50+ 個國籍的乘客兌現承諾。而我正準備把這門課帶回行銷。</span>
           </p>
 
+          <div class="now">
+            <span class="mono"><span class="lang-en">Now</span><span class="lang-zh">現在進行式</span></span>
+            <span class="lang-en">Flying international routes with Cathay Pacific · learning Swedish ·
+            building this portfolio · open to marketing, communications, and
+            brand roles in Asia &amp; Europe.</span>
+            <span class="lang-zh">在國泰航空環遊世界 · 學瑞典文 · 打造個人價值 <br> · 開放亞洲與歐洲的行銷、傳播與品牌職缺機會。</span>
+          </div>
+
           <!-- PASSPORT -->
           <div class="passport" role="group" aria-label="Personal information">
             <div class="pp-head">
@@ -739,17 +773,9 @@
               <span class="pp-stamp"><span class="lang-en">Open to work</span><span class="lang-zh">開放職缺機會</span></span>
             </div>
             <div class="mrz">P&lt;TWNLIU&lt;&lt;TSAI&lt;NING&lt;NATALIE&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>CAINING01&lt;GMAIL&lt;COM&lt;&lt;MKTG&lt;COMMS&lt;ZH&lt;EN&lt;SV&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
-          </div>
-
-          <div class="now">
-            <span class="mono"><span class="lang-en">Now</span><span class="lang-zh">現在進行式</span></span>
-            <span class="lang-en">Flying international routes with Cathay Pacific · learning Swedish ·
-            building this portfolio · open to marketing, communications, and
-            brand roles in Asia &amp; Europe.</span>
-            <span class="lang-zh">在國泰航空環遊世界 · 學瑞典文 · 打造個人價值 <br> · 開放亞洲與歐洲的行銷、傳播與品牌職缺機會。</span>
-          </div>
-        </div>
-      </div>
+          </div><!-- /.passport -->
+        </div><!-- /.body -->
+      </div><!-- /.about -->
     </div>
   </section>
 
