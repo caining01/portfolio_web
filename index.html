@@ -257,6 +257,17 @@
 @media (max-width: 860px){
   .also.also-grid{grid-template-columns:1fr}
 }
+
+/* ---- mobile hotfix v2: force case studies to stack ---- */
+@media (max-width: 860px){
+  .cols{display:block !important}
+  .cols .media{position:static !important; margin-top:28px}
+}
+@media (max-width: 640px){
+  .logo{padding-left:12px}
+  .vid .cap{font-size:11px; padding:8px 10px}
+}
+  
 </style>
 </head>
 <body>
