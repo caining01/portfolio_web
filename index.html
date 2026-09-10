@@ -845,7 +845,8 @@
           <span class="mono"><span class="lang-en">Get in touch</span><span class="lang-zh">聯絡我</span></span>
           <h2 class="serif" style="margin-top:14px"><span class="lang-en">Let's make something people <span class="a">actually want to watch</span>.</span><span class="lang-zh">一起做出大家<br><span class="a">真正想看</span>的內容。</span></h2>
           <div class="row">
-            <a class="btn dark" href="mailto:caining01@gmail.com">caining01@gmail.com</a>
+            <a class="btn dark" href="mailto:caining01@gmail.com">caining01@gmail.com
+            onclick="gtag('event', 'email_click');">caining01@gmail.com</a>
             <a class="textlink" href="https://www.linkedin.com/in/tsainingliu" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
           <p class="sub"><span class="lang-en">I reply in English or Chinese </span><span class="lang-zh">中英文皆可</span></p>
@@ -909,6 +910,36 @@
       entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, {threshold: 0.12});
     els.forEach(el => io.observe(el));
+  })();
+</script>
+
+  <script>
+  // GA4: track portfolio project views
+  (function(){
+    const projects = document.querySelectorAll('.case');
+
+    const projectObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const project = entry.target;
+          const number = project.querySelector('.num')?.textContent.trim() || '';
+          const title = project.querySelector('h3')?.textContent.trim() || '';
+
+          if (typeof gtag === 'function') {
+            gtag('event', 'project_view', {
+              project_number: number,
+              project_name: title
+            });
+          }
+
+          observer.unobserve(project);
+        }
+      });
+    }, {
+      threshold: 0.4
+    });
+
+    projects.forEach(project => projectObserver.observe(project));
   })();
 </script>
 
